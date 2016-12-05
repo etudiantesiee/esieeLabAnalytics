@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fr.esiee.pic</groupId>
+	<artifactId>esieeLabAnalytics</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<description>
+		Example project used for continuous integration and big data 
+	</description>
+
+	<properties>
+	</properties>
+
+	<dependencies>
+	</dependencies>
+
+	<!-- Configuration des dépôts cibles pour le déploiement des artefacts -->
+	<distributionManagement>
+		<snapshotRepository>
+			<id>etudiant-vm</id>
+			<name>etudiant-vm-snapshots</name>
+			<url>http://localhost:8081/artifactory/libs-snapshot-local</url>
+		</snapshotRepository>
+		<repository>
+			<id>etudiant-vm</id>
+			<name>etudiant-vm-releases</name>
+			<url>http://localhost:8081/artifactory/libs-release-local</url>
+		</repository>
+	</distributionManagement>
+
+
+	<!-- Configuration des dépôts cibles pour le déploiement des artefactsl -->
+	<build>
+		<plugins>
+		</plugins>
+	</build>
+</project>
