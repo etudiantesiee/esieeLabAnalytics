@@ -23,9 +23,6 @@ import scala.Tuple2;
 
 import com.datastax.spark.connector.japi.CassandraJavaUtil;
 
-import fr.esiee.pic.analytics.domain.ArtistByFirstLetter;
-import fr.esiee.pic.analytics.domain.Statistics;
-
 @Component
 public class ArtistsStatistics implements Serializable {
 	
@@ -94,6 +91,104 @@ public class ArtistsStatistics implements Serializable {
 							.saveToCassandra();
 		
 		LOGGER.info("End execution of JOB \"Count Artits By First Letter\"");
+	}
+	
+	public class ArtistByFirstLetter implements Serializable {
+		
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = -6651174365327769226L;
+
+		/**
+		 * Lettre initial du nom de l'artiste
+		 */
+		private String firstLetter;
+		
+		/**
+		 * Nom de l'artiste
+		 */
+		private String artist;
+
+		public ArtistByFirstLetter(String firstLetter, String artist) {
+			super();
+			this.firstLetter = firstLetter;
+			this.artist = artist;
+		}
+
+		public String getFirstLetter() {
+			return firstLetter;
+		}
+
+		public void setFirstLetter(String firstLetter) {
+			this.firstLetter = firstLetter;
+		}
+
+		public String getArtist() {
+			return artist;
+		}
+
+		public void setArtist(String artist) {
+			this.artist = artist;
+		}
+
+		@Override
+		public String toString() {
+			return "ArtistByFirstLetter [firstLetter=" + firstLetter + ", artist="
+					+ artist + "]";
+		}
+	}
+	
+	/**
+	 * Stats
+	 * 
+	 * @author etudiant
+	 *
+	 */
+	public class Statistics implements Serializable {
+		
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = -1444211491426553516L;
+
+		/**
+		 * Nom de la stat
+		 */
+		private String counterName;
+		
+		/**
+		 * Valeur de la stat
+		 */
+		private Integer counterValue;
+
+		public Statistics(String counterName, Integer counterValue) {
+			super();
+			this.counterName = counterName;
+			this.counterValue = counterValue;
+		}
+
+		public String getCounterName() {
+			return counterName;
+		}
+
+		public void setCounterName(String counterName) {
+			this.counterName = counterName;
+		}
+
+		public Integer getCounterValue() {
+			return counterValue;
+		}
+
+		public void setCounterValue(Integer counterValue) {
+			this.counterValue = counterValue;
+		}
+
+		@Override
+		public String toString() {
+			return "Statistics [counterName=" + counterName + ", counterValue="
+					+ counterValue + "]";
+		}
 	}
 
 }
