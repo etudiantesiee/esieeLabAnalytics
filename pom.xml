@@ -24,9 +24,54 @@
 
 		<!-- Source encoding -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
+		<!-- Spark version -->
+		<spark.version>1.6.0</spark.version>
+		<spark.core.version>1.6.2</spark.core.version>
 	</properties>
 
 	<dependencies>
+	
+		<!-- Cassandra driver -->
+		<dependency>
+			<groupId>com.datastax.cassandra</groupId>
+			<artifactId>cassandra-driver-core</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
+		<!-- DSE spark -->
+		<dependency>
+			<groupId>com.datastax.spark</groupId>
+			<artifactId>spark-cassandra-connector_2.10</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.datastax</groupId> -->
+<!-- 			<artifactId>dse-spark</artifactId> -->
+<!-- 			<version>5.0.3</version> -->
+<!-- 		</dependency> -->
+
+		<!-- Spark -->
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_2.10</artifactId>
+			<version>${spark.core.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-sql_2.10</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.4.4</version>
+		</dependency>
+
+		<!-- Spring boot -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
